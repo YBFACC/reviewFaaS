@@ -1,0 +1,52 @@
+{
+  "name": "@faasjs-starter/www",
+  "private": "true",
+  "version": "0.0.0",
+  "dependencies": {
+    "@ant-design/icons": "*",
+    "@faasjs/eslint-config-react": "^0.0.3-beta.79",
+    "@faasjs/react": "^0.0.3-beta.79",
+    "antd": "*",
+    "lodash": "*",
+    "vite": "*",
+    "@vitejs/plugin-react": "*"
+  },
+  "devDependencies": {
+    "vite-tsconfig-paths": "*",
+    "@faasjs/jest": "*",
+    "@testing-library/jest-dom": "*",
+    "@testing-library/react": "*",
+    "@types/jest": "*",
+    "@types/lodash": "*",
+    "@types/node": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*"
+  },
+  "scripts": {
+    "dev": "vite",
+    "test": "jest",
+    "ci": "jest --coverage --ci"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@faasjs/react"
+    ]
+  },
+  "jest": {
+    "rootDir": ".",
+    "transform": {
+      ".(jsx|tsx?)": "@faasjs/jest"
+    },
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "**/*.tsx"
+    ],
+    "testRegex": "/*\\.test\\.tsx?$",
+    "moduleNameMapper": {
+      "^libs(.*)$": "<rootDir>/src/libs$1"
+    },
+    "setupFilesAfterEnv": [
+      "./src/jest.setup.ts"
+    ]
+  }
+}

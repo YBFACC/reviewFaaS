@@ -1,0 +1,25 @@
+{
+  "name": "@faasjs-starter/mono",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:api": "npm run dev --workspace=packages/api",
+    "dev:www": "npm run dev --workspace=packages/www",
+    "test": "npm run test --workspaces",
+    "test:api": "npm run test --workspace=packages/api",
+    "test:www": "npm run test --workspace=packages/www",
+    "ci": "npm run ci --workspaces",
+    "ci:api": "npm run ci --workspace=packages/api",
+    "ci:www": "npm run ci --workspace=packages/www"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "*"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=8.0.0"
+  }
+}
